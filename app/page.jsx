@@ -57,6 +57,11 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+
+      {/* Stats Section */}
+      <section>
+        
+      </section>
       </>
   );
 }
