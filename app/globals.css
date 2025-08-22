@@ -1,16 +1,33 @@
-/* @import "tailwindcss";
-@import "tw-animate-css"; */
+/* === IMPORTS (must be first) === */
+
+@charset "UTF-8";
+
+@import "tw-animate-css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
+
+/* === CUSTOM UTILITIES === */
+@layer utilities {
+  .gradient {
+    @apply bg-gradient-to-b from-gray-400 via-gray-200 to-gray-600;
+  }
+
+  .gradient-title {
+    @apply gradient font-extrabold tracking-tighter text-transparent bg-clip-text pb-2 pr-2;
+  }
+}
+
+/* === BUTTON === */
 .button {
   @apply px-4 py-2 bg-blue-500 text-white rounded-lg;
 }
 
-
+/* === THEME VARIABLES === */
 @custom-variant dark (&:is(.dark *));
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -51,6 +68,7 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+/* === LIGHT THEME VARIABLES === */
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -86,6 +104,7 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+/* === DARK THEME VARIABLES === */
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -120,6 +139,7 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* === BASE LAYER === */
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -129,39 +149,36 @@
   }
 }
 
-.grid-background{
+/* === BACKGROUND GRID === */
+.grid-background {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height:100%;
+  height: 100%;
   background: linear-gradient(
     to right,
-    rgba(255,255,255,0.1) 1px,
+    rgba(255, 255, 255, 0.1) 1px,
     transparent 1px
   ),
-  linear-gradient(to bottom, rgba(255,255,255,0.1) 1px,transparent 1px);
+  linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
   background-size: 50px 50px;
   pointer-events: none;
   z-index: -1;
 }
 
-.grid-background::before{
+.grid-background::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height:100%;
-  background: radial-gradient(circle , transparent, rgba(0,0,0,0.9));
+  height: 100%;
+  background: radial-gradient(circle, transparent, rgba(0, 0, 0, 0.9));
 }
 
-@layer utilities{
-  .gradient{
-    @apply bg-gradient-to-b from-gray-400 via-gray-200 to gray-600;
-  }
+/* const config = {
+  plugins: ["@tailwindcss/postcss"],
+};
 
-  .gradient-title{
-    @apply gradient font-extrabold tracking-tighter text-transparent bg-clip-text pb-2 pr-2;
-  }
-}
+export default config; */
