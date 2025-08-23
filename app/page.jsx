@@ -181,37 +181,29 @@ export default function Home() {
 
       {/*==CTA SECTION== */}
       <section className="w-full">
-  <div className="mx-auto py-24 gradient rounded-lg">
-    <div className="flex flex-col items-center justify-center space-y-4 text-center max-w-3xl mx-auto">
-      
-      {/* Heading → uses primary (dark in light mode, white in dark mode) */}
-      <h2 className="text-3xl font-bold tracking-tighter text-[hsl(var(--primary))] sm:text-4xl md:text-5xl">
-        Ready to Accelerate Your Career?
-      </h2>
-
-      {/* Paragraph → softer tone using foreground */}
-      <p className="mx-auto max-w-[600px] text-[hsl(var(--foreground))]/80 md:text-xl">
-        Join thousands of professionals who are advancing their careers
-        with AI-powered guidance.
-      </p>
-
-      {/* Button → uses secondary variant */}
-      <Link href="/dashboard" passHref>
-        <Button
-          size="lg"
-          variant="secondary"
-          className="h-11 mt-5 animate-bounce"
-        >
-          Start Your Journey Today <ArrowRight className="ml-2 h-4 w-4" />
-        </Button>
-      </Link>
-    </div>
-  </div>
-</section>
-
-
-
-
+        <div className="mx-auto py-24 gradient rounded-lg">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold tracking-tighter text-primary-foreground sm:text-4xl md:text-5xl">
+              Ready to Accelerate Your Career?
+            </h2>
+            <p className="mx-auto max-w-[600px] text-gray-900/80 md:text-xl">
+              Join thousands of professionals who are advancing their careers
+              with AI-powered guidance.
+            </p>
+            <Link href="/dashboard" passHref>
+              <Button
+                size="lg"
+                variant="secondary"
+                className="h-11 mt-5 animate-bounce
+                bg-black"
+              >
+                Start Your Journey Today <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+    
 
   </div>
           
